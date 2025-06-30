@@ -1,0 +1,165 @@
+
+*{
+	margin:0px;
+	padding:0px;
+	white-space:normal;
+	word-wrap:break-word;
+	max-width:100%;
+}
+body{
+	font-family : Arial,serif ;
+	background-color:#eee;
+}
+header{
+	background-color : rgb(87,172,255);
+	text-align:center;
+	z-index:100;
+	width:100%;
+	margin-bottom:0px;
+	padding-bottom:0px;
+	
+}
+header h1{
+	margin-bottom:5px;
+	text-align:center;
+	padding-left:10px;
+	padding-right:10px;
+}
+nav{
+	padding-top:5px;
+}
+nav ul{
+	list-style-type : none;
+	list-style-position : inside;
+	padding-bottom:2px;
+	//margin-bottom:5px;
+}
+#nav li{
+	display : inline-block;
+	width:90px;
+}
+#nav a{
+	color:white;
+	text-decoration:none;
+	font-weight:bold;
+}
+#nav a:hover{
+	border-bottom:3px solid rgba(238,238,238,0.5);
+}
+a:hover{
+	cursor:pointer;
+}
+#pagelink{
+	border-bottom:3px solid white;
+}
+#anciennes_mesures article{
+	border-radius : 5px;
+	margin-top:5px;
+	width:auto;
+}
+#mesure,#principal aside{
+	display:inline-block;
+	padding:5px;
+	vertical-align:top;
+	border-radius : 5px;
+	background-color:white;
+	width:48%;
+	height:150px;
+}
+article{
+	padding:5px;
+	/*rgba(238,238,238,0.6)*/
+	background-color:white;
+}
+aside h1{
+	text-align:center;
+}
+.img_prev{
+	
+	height:50%; 
+	float:right;
+	vertical-align:bottom;
+}
+section h2, section h1{
+	margin:0px;
+	padding:0px;
+}
+section h1{
+	text-align:center;
+	line-height:200%;
+}
+
+footer{
+	background-color:#333;
+	color:white;
+	margin-top:20px;
+}
+footer td {
+	display:inline-block;
+	margin:10px;
+
+}
+@media all and (orientation:landscape){
+	body{
+		max-width:98%;
+		margin:auto;
+	}
+	header{
+		margin-bottom:0px;
+		padding-bottom:0px;
+		position:fixed;
+		top:0px;
+		left:0px;
+	}
+	#principal{
+		margin-top:80px;
+	}
+	#mesure,#principal aside{
+		display:inline-block;
+		padding:5px;
+		vertical-align:top;
+		width:48%;
+		height:145px;
+		padding-bottom:10px;
+	}
+	#principal aside{
+		position:absolute;
+		left:50%;
+	}
+	aside .img_prev{
+		height:50%;
+		text-align:center;
+		float:left;
+		
+	}
+	.ancienne_mesure{
+		display:inline-block;
+		min-width:32.1%;
+	}
+	#today{
+		min-width:100%;
+	}
+}
+@media all and (orientation:portrait){
+	
+	header{
+		position:sticky;
+		top:0px;
+		z-index:100;
+	}
+	#principal{
+		margin-top:5px;
+	}
+	#mesure,#principal aside{
+		display:block;
+		margin-top:5px;
+		margin-bottom:auto;
+		width:98%;
+	}
+	#today{
+		min-width:100%;
+	}
+	footer td {
+
+	}
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<meta name = "viewport" content = "width = device-width,maximum-scale=2"/>
+		<title>Projet Bac 2 du groupe 8</title>
+		<link rel = "stylesheet" href = "/css/style.css" />
+		
+	</head>
+	
+	<body>
+		<header>
+			<h1>Site de gestion et d'analyse des donnees</h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index" class='navlink' id="pagelink">Acceuil</a></li>
+					<li><a href="graphics" class='navlink'>Graphiques</a></li>
+					<li><a href="about" class='navlink'>A propos</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id = "principal">
+			<article id = "mesure" >
+				<% var l = data.length; var i;var j;%>
+				<% for(j=0;j<l;j++){ data[j].date= new Date(data[j].date);}%>
+				<h1>Aujourd'hui a <%=data[l-1].date.getHours()%>:<%=data[l-1].date.getMinutes() %></h1>
+				
+				<div><strong>Temperature</strong> : <span class="mesure"><%=data[l-1].temperature%></span> C</div>
+				<div><strong>Humidite </strong> : <span class="mesure"><%=data[l-1].humidity%></span> %</div>
+				<div><strong>Pression </strong> : <span class="mesure"><%=data[l-1].pressure%></span> hPa</div>
+				<div><strong>Pluie </strong> : <span class="mesure"><%=data[l-1].pressure%></span></div>
+				<div><strong>Vitesse du vent</strong> : <span class="mesure"><%=data[l-1].windspeed%></span> km/h</div>
+				<div><strong>Direction du vent</strong> : <span class="mesure"><%=data[l-1].direction%></span> DEGRES </div>
+			</article>
+			<aside id = "prevision">
+				<h1>Bulletin journalier:</h1>
+				
+				
+			</aside>
+		</section>
+		<section id="pub">
+			
+		</section>
+		<section id="prevs_horaire">
+			<h1>Previsions horaires</h1>
+			<article class="prev_horaire">
+				
+			
+			</article>
+		
+		</section>
+		<section id="anciennes_mesures">
+			<h1>Mesures ulterieurs</h1>
+			<% for (i=2;i<=l;i++){ %>
+			
+			<article class = "ancienne_mesure">
+				
+				<h1>Le <%=data[l-i].date.getDate()+'/'+data[l-i].date.getMonth()+' a '+data[l-i].date.getHours()+':'+data[l-i].date.getMinutes() %></h1>
+				<div><strong>Temperature</strong> : <span class="mesure"><%=data[l-i].temperature%></span> C</div>
+				<div><strong>Humidite </strong> : <span class="mesure"><%=data[l-i].humidity%></span> %</div>
+				<div><strong>Pression </strong> : <span class="mesure"><%=data[l-i].pressure%></span> hPa</div>
+				<div><strong>Pluie </strong> : <span class="mesure"><%=data[l-1].pressure%></span></div>
+				<div><strong>Vitesse du vent</strong> : <span class="mesure"><%=data[l-i].windspeed%></span> km/h</div>
+				<div><strong>Direction du vent</strong> : <span class="mesure"><%=data[l-i].direction%></span> DEGRES </div>
+				
+			</article>
+			<%} %>
+		</section>
+		<footer id ="footer">
+			<table>
+				<tbody>
+					
+					<tr>
+						<td>Site cree par : <strong>Gradi Kiminu</strong></td>
+						<td><strong>Etudiant en L2 Genie electrique Faculte Polytechnique</strong></td>
+						<td>Adresse Mail : <a href="mailto:Grkiminu2020@gmail.com">Grkiminu2020@gmail.com</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</footer>
+		<script src = "/socket.io/socket.io.js"></script>
+		<script src='/js/javascript.js'></script>
+		<script src='/js/darkMode.js'></script>
+		<noscript id = "pasdejs">blabla</noscript>
+	</body>
+	
+</html>
