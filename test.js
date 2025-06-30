@@ -61,7 +61,7 @@ var collecte = function(req,res){
 
 //var server = https.createServer(options,app);
 
-//var httpserver = http.createServer(app);
+var httpserver = http.createServer(app);
 
 var io = sockets(httpserver,{cors:{origine:'*',methods:['GET','POST']}});
 io.sockets.on('connection', function (socket) {
@@ -102,6 +102,6 @@ var PORT = process.env.PORT || 8080;
 
 //server.listen(8443);
 //.listen(8080,'0.0.0.0');
-app.listen(PORT,function(){
+httpserver.listen(PORT,function(){
 	console.log('le serveur tourne');
 });
