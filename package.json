@@ -2,7 +2,7 @@
 
 {
   "scripts": {
-    "start": "node test.js",
+    "start": "node test.js"
   },
   "engines": {
     "node": "22.x"
