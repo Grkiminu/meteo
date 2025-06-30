@@ -72,8 +72,8 @@ io.sockets.on('connection', function (socket) {
 	});
 });
 
-var MongoClient = mongoDB.MongoClient;
-var Db = mongoDB.Db;
+//var MongoClient = mongoDB.MongoClient;
+//var Db = mongoDB.Db;
 
 app.set('view engine','ejs');
 app.use(express.static('public'));
