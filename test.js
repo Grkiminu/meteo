@@ -98,7 +98,10 @@ app.post('/datas',collecte);
 app.use(function(req,res,next){
 	res.redirect('/');
 });
+var PORT = process.env.PORT || 8080;
 
 //server.listen(8443);
 //.listen(8080,'0.0.0.0');
-app.listen(8080,'0.0.0.0');
+app.listen(PORT,function(){
+	console.log('le serveur tourne');
+});
