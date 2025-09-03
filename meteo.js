@@ -64,7 +64,7 @@ var collecte = async function(req,res){
 
 var server = http.createServer(app);
 
-var io = sockets(server,{cors:{origine:'*',methods:['GET','POST']}});
+var io = sockets(server,{cors:{origin:'*',methods:['GET','POST']}});
 io.sockets.on('connection', function (socket) {
 	console.log('Un client est connecte a socket.io');
 	
@@ -112,4 +112,5 @@ var PORT = process.env.PORT || 8080;  //process.env.PORT ||
 server.listen(PORT,function(req,res){
 	console.log('le serveur tourne',PORT);
 	console.log(req);
+
 });
