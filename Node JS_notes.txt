@@ -1,0 +1,15 @@
+Node JS
+-------
+
+express et les middleware
+-------------------------
+var express = require('express');
+var app = express();
+
+app.set(x,y);    //permet de definir y comme x
+
+x = string; qui peut etre le moteur de rendu
+y = string; qui peut etre le language de template ejs ou haml pour le moteur de rendu
+
+
+express().public(x) est un middleware

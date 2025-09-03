@@ -1,7 +1,7 @@
-var socket = io('http:// 192.168.76.194:8080');	//connection a socketIO
+var url = 'https://meteo-vqrz.onrender.com'
+// var url = 'http://localhost:8080'
+var socket = io(url);	//connection a socketIO
 
-	//on recupere l element article d affichage de la mesure la plus recente
-//var mesure_cl=mesure.cloneNode(true);
 
 var date = new Date();
 
@@ -15,7 +15,6 @@ socket.on('connect_error',function(error){
 socket.on('confirm',function(msg){
 	tr=confirm(msg);
 	alert(tr?'Vous utilisez socketIO':'vous n\'utilisez pas socketIO');
-	//ctest.innerHTML = 'BONJOUR';
 	socket.emit('confirmation',tr);
 });
 socket.on('newData',function(data){
@@ -30,11 +29,10 @@ socket.on('newData',function(data){
 	// Dans l element d affichage principal, on recupere toutes les balises div qui doivent contenir les valeurs
 
 	var length = valeur.length;
-	var anc_valeur=[];
+	//var anc_valeur=[];
 
-	var ind;
+	//var ind;
 	
-	//alert(data.date.getHours());
 	var i;
 	var j;
 	var k;
@@ -47,7 +45,6 @@ socket.on('newData',function(data){
 		}
 	}
 	
-	data.date= new Date(data.date);
 	
 	for (k=0;k<length;k++){
 		mesures[0].getElementsByClassName('mesure')[k].innerHTML = valeur[k].innerHTML;
@@ -69,15 +66,20 @@ socket.on('newData',function(data){
 	var h1 = mesure.getElementsByTagName('h1')[0];
 	
 	var h1content = h1.innerHTML;
-	var time = h1content.match(/[0-9]{1,2}:[0-9]{1,2}/i);
+	var time = h1content.match(/[0-9]{2}:[0-9]{2}/).toString();
+	alert(time);
+	time = time.split(':');
+	alert(data.createdAt);
 	
-	if(data.date.getHours()==0 && parseInt(time.split(':')[0]!=0)){
-		var dt = data.date.getDate()-1
-		datePrinter.innerHTML = 'Le '+dt+'/'+data.date.getMonth()+' a '+time[0]+':'+time[1];
+	if(data.createdAt.getHours()==0 && parseInt(time[0]!=0)){
+		var dt = data.createdAt.getDate()-1;
+		datePrinter.innerHTML = 'Le '+dt+'/'+(data.createdAt.getMonth()+1)+' a '+time[0]+':'+time[1];
 	}else{
-		datePrinter.innerHTML = 'Le '+data.date.getDate()+'/'+data.date.getMonth()+' a '+time;
+		datePrinter.innerHTML = 'Le '+(data.createdAt.getDate()<10?'0'+data.createdAt.getDate():data.createdAt.getDate())+'/'+(data.createdAt.getMonth()<9?'0'+(data.createdAt.getMonth()+1):data.createdAt.getMonth()+1)+' a '+time;
 	}
 	
-	h1.innerHTML = 'Aujourd\'hui a '+data.date.getHours()+':' +data.date.getMinutes();
+	//
+	
+	h1.innerHTML = 'Aujourd\'hui a '+(data.createdAt.getHours()<10?'0'+data.createdAt.getHours():data.createdAt.getHours())+':' +(data.createdAt.getMinutes()<10?'0'+data.createdAt.getMinutes():data.createdAt.getMinutes());
 	
 });

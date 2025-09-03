@@ -1,0 +1,22 @@
+Projet Bac 2 Groupe 8 ; site web
+---------------------------------
+
+Donnees que la carte arduino doit envoyer :
+{temperature, pluviometrie, vitesse, direction, pression}
+
+Ce que dois faire le site :
+--------------------------
+
+A chaque donnees recues, le site les enregistrent dans la base des donnees et envoi un message via connectIO a tous les clients connectes
+pour leur demander de reverifier la basse des donnees 
+
+s'il recoit un message d'un client autre que la carte arduino il envoi le dernier objet de la base des donnees
+
+Ce que fait le client :
+----------------------
+
+A chaque fois qu'il recois un message du site , il verifie :
+- si le message est vide il demande les infos mis a jour dans la base des donnees
+- si non il verifie que les valeurs du tableau sont conformes
+	- si les valeurs le sont, il les affiche a la place des anciennes 
+	- si non il refait une demande

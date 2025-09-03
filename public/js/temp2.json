@@ -1,0 +1,98 @@
+[
+  {
+    "hour": "00:00",
+    "temp_c": null
+  },
+  {
+    "hour": "01:00",
+    "temp_c": null
+  },
+  {
+    "hour": "02:00",
+    "temp_c": null
+  },
+  {
+    "hour": "03:00",
+    "temp_c": null
+  },
+  {
+    "hour": "04:00",
+    "temp_c": null
+  },
+  {
+    "hour": "05:00",
+    "temp_c": null
+  },
+  {
+    "hour": "06:00",
+    "temp_c": null
+  },
+  {
+    "hour": "07:00",
+    "temp_c": null
+  },
+  {
+    "hour": "08:00",
+    "temp_c": null
+  },
+  {
+    "hour": "09:00",
+    "temp_c": null
+  },
+  {
+    "hour": "10:00",
+    "temp_c": null
+  },
+  {
+    "hour": "11:00",
+    "temp_c": 23.9
+  },
+  {
+    "hour": "12:00",
+    "temp_c": 25.0
+  },
+  {
+    "hour": "13:00",
+    "temp_c": 24.9
+  },
+  {
+    "hour": "14:00",
+    "temp_c": 27.2
+  },
+  {
+    "hour": "15:00",
+    "temp_c": 27.6
+  },
+  {
+    "hour": "16:00",
+    "temp_c": 27.8
+  },
+  {
+    "hour": "17:00",
+    "temp_c": 27.1
+  },
+  {
+    "hour": "18:00",
+    "temp_c": null
+  },
+  {
+    "hour": "19:00",
+    "temp_c": null
+  },
+  {
+    "hour": "20:00",
+    "temp_c": null
+  },
+  {
+    "hour": "21:00",
+    "temp_c": null
+  },
+  {
+    "hour": "22:00",
+    "temp_c": null
+  },
+  {
+    "hour": "23:00",
+    "temp_c": null
+  }
+]

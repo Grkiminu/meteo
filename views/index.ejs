@@ -22,8 +22,8 @@
 		<section id = "principal">
 			<article id = "mesure" >
 				<% var l = data.length; var i;var j;%>
-				<% for(j=0;j<l;j++){ data[j].date= new Date(data[j].date);}%>
-				<h1>Aujourd'hui a <%=data[l-1].date.getHours()%>:<%=data[l-1].date.getMinutes() %></h1>
+				
+				<h1>Aujourd'hui a <%=(data[l-1].createdAt.getHours()<10?'0'+data[l-1].createdAt.getHours():data[l-1].createdAt.getHours())%>:<%=(data[l-1].createdAt.getMinutes()<10?'0'+data[l-1].createdAt.getMinutes():data[l-1].createdAt.getMinutes()) %></h1>
 				
 				<div><strong>Temperature</strong> : <span class="mesure"><%=data[l-1].temperature%></span> C</div>
 				<div><strong>Humidite </strong> : <span class="mesure"><%=data[l-1].humidity%></span> %</div>
@@ -55,7 +55,8 @@
 			
 			<article class = "ancienne_mesure">
 				
-				<h1>Le <%=data[l-i].date.getDate()+'/'+data[l-i].date.getMonth()+' a '+data[l-i].date.getHours()+':'+data[l-i].date.getMinutes() %></h1>
+				<h1>Le <%=(data[l-i].createdAt.getDate()<10?'0'+data[l-i].createdAt.getDate():data[l-i].createdAt.getDate())+'/'+(data[l-i].createdAt.getMonth()<9?'0'+(data[l-i].createdAt.getMonth()+1):(data[l-i].createdAt.getMonth()+1))+' a '%>
+				<%=(data[l-i].createdAt.getHours()<10?'0'+data[l-i].createdAt.getHours():data[l-i].createdAt.getHours())%>:<%=(data[l-i].createdAt.getMinutes()<10?'0'+data[l-i].createdAt.getMinutes():data[l-i].createdAt.getMinutes()) %></h1>
 				<div><strong>Temperature</strong> : <span class="mesure"><%=data[l-i].temperature%></span> C</div>
 				<div><strong>Humidite </strong> : <span class="mesure"><%=data[l-i].humidity%></span> %</div>
 				<div><strong>Pression </strong> : <span class="mesure"><%=data[l-i].pressure%></span> hPa</div>
